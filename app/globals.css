@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #f1e9d2;
+  background-image:
+    radial-gradient(rgba(29, 35, 64, 0.035) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+::selection {
+  background: #a32638;
+  color: #f1e9d2;
+}
+
+a {
+  text-underline-offset: 3px;
+}
+
+/* Visible keyboard focus, kept consistent with the ink/stamp palette */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #a32638;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.docket {
+  font-family: var(--font-plex-mono);
+  letter-spacing: 0.01em;
+}
+
+.folder-tab {
+  clip-path: polygon(0 12px, 12px 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.hairline {
+  border-color: #b9ae8d;
+}
