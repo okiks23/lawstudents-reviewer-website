@@ -13,6 +13,61 @@ import Feynman from "@/components/templates/Feynman";
 import Pomodoro from "@/components/templates/Pomodoro";
 import SpacedRepetition from "@/components/templates/SpacedRepetition";
 
+function LawphilSearch() {
+  const [query, setQuery] = useState("");
+
+  function openSearch(scope: "judjuris" | "statutes") {
+    const q = query.trim();
+    if (!q) return;
+    const url = `https://www.google.com/search?q=${encodeURIComponent(
+      `site:lawphil.net ${scope} ${q}`
+    )}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+
+  return (
+    <div className="bg-paperDark/70 border border-line p-4">
+      <p className="docket text-[11px] uppercase tracking-wide text-stamp">
+        Not in our sample set yet?
+      </p>
+      <p className="mt-1 text-sm text-charcoal/85 leading-relaxed">
+        Search the rest of LawPhil directly — jurisprudence back to 1901,
+        and every Philippine statute and code.
+      </p>
+      <div className="mt-3 flex flex-col sm:flex-row gap-2">
+        <input
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") openSearch("judjuris");
+          }}
+          placeholder="e.g. unlawful detainer, or a case name"
+          className="flex-1 bg-paper border border-line px-3 py-2 text-sm
+                     placeholder:text-charcoal/40 focus:outline-none focus:border-stamp"
+        />
+        <div className="flex gap-2">
+          <button
+            onClick={() => openSearch("judjuris")}
+            className="docket text-[11px] uppercase tracking-wide bg-ink text-paper px-3 py-2 hover:bg-ink/90 whitespace-nowrap"
+          >
+            Search Cases
+          </button>
+          <button
+            onClick={() => openSearch("statutes")}
+            className="docket text-[11px] uppercase tracking-wide border border-line px-3 py-2 hover:border-stamp whitespace-nowrap"
+          >
+            Search Statutes
+          </button>
+        </div>
+      </div>
+      <p className="mt-2 text-xs text-charcoal/60">
+        Opens Google's search restricted to lawphil.net in a new tab — this
+        app doesn't copy or store LawPhil's content.
+      </p>
+    </div>
+  );
+}
+
 function TemplatePanel({
   technique,
   record,
@@ -95,7 +150,7 @@ export default function ReviewClient({
         </label>
       </div>
 
-      <div className="mb-8">
+            <div className="mb-8">
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -103,6 +158,10 @@ export default function ReviewClient({
           className="w-full bg-paper border-b-2 border-ink px-1 py-2 text-lg
                      placeholder:text-charcoal/40 focus:outline-none"
         />
+      </div>
+
+      <div className="mb-8">
+        <LawphilSearch />
       </div>
 
       <div className="grid lg:grid-cols-[380px_1fr] gap-8">

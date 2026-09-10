@@ -33,7 +33,7 @@ export const cases: CaseRecord[] = [
   {
     id: "ynot-v-iac",
     title: "Ynot v. Intermediate Appellate Court",
-    grNumber: "G.R. No. 74457",
+    grNumber: "G.R. No. L-74457",
     date: "March 20, 1987",
     subject: "Constitutional Law",
     tags: ["Due Process", "Police Power"],
@@ -74,7 +74,7 @@ export const cases: CaseRecord[] = [
           "It let executive officers give away private property to beneficiaries of their own choosing, with no court involved at any point.",
       },
     ],
-    sourceUrl: "http://www.lawphil.net/judjuris/juri1987/mar1987/gr_74457_1987.html",
+    sourceUrl: "http://www.lawphil.net/judjuris/juri1987/mar1987/gr_l-74457_1987.html",
   },
   {
     id: "tanada-v-tuvera",

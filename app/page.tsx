@@ -35,11 +35,23 @@ export default function HomePage() {
         ))}
       </section>
 
-      <footer className="mt-20 border-t hairline pt-6 text-sm text-charcoal/70">
+            <footer className="mt-20 border-t hairline pt-6 text-sm text-charcoal/70">
         <p>
           Sources are Philippine Supreme Court decisions, verified against
           lawphil.net at the time this dataset was written. Always confirm
           against the original text before citing.
+        </p>
+        <p className="mt-2">
+          Case and statute source:{" "}
+          <a href="https://lawphil.net" target="_blank" rel="noreferrer" className="underline decoration-line hover:decoration-stamp">
+            The LawPhil Project
+          </a>{" "}
+          (Arellano Law Foundation), licensed{" "}
+          <a href="https://creativecommons.org/licenses/by-nc/4.0/ph/" target="_blank" rel="noreferrer" className="underline decoration-line hover:decoration-stamp">
+            CC BY-NC 4.0 Philippines
+          </a>
+          . This is a non-commercial study tool; it does not copy or store
+          LawPhil's content, and links point back to the original source.
         </p>
       </footer>
     </main>

@@ -27,9 +27,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+        <html lang="en" suppressHydrationWarning>
       <body
         className={`${sourceSerif.variable} ${plexMono.variable} font-serif bg-paper text-ink`}
+        suppressHydrationWarning
       >
         {children}
       </body>
